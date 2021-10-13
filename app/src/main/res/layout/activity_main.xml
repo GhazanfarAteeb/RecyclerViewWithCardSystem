@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".MainActivity">
+	<LinearLayout
+		android:backgroundTint="#73DCDCDC"
+		android:id="@+id/top_view"
+		android:gravity="center_vertical"
+		android:layout_width="match_parent"
+		android:layout_height="70sp"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		android:baselineAligned="false">
+		<LinearLayout
+			android:id="@+id/back_button_layout"
+			android:gravity="center_vertical|start"
+			android:layout_width="0sp"
+			android:layout_weight="0.5"
+			android:layout_height="wrap_content">
+			
+			<Button
+				android:id="@+id/back_button"
+				android:layout_width="30sp"
+				android:layout_height="30sp"
+				android:layout_marginStart="15sp"
+				android:background="@drawable/ic_baseline_arrow_back_ios_24"
+				tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+		</LinearLayout>
+		<android.widget.SearchView
+			android:layout_marginStart="15sp"
+			android:iconifiedByDefault="true"
+			android:queryHint="Search Product"
+			android:id="@+id/search_bar"
+			android:layout_width="0sp"
+			android:layout_weight="3"
+			android:layout_height="wrap_content"
+			app:layout_constraintTop_toBottomOf="@id/top_view"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"/>
+		<LinearLayout
+			android:gravity="center_vertical|end"
+			android:layout_width="0sp"
+			android:layout_weight="0.5"
+			android:layout_height="wrap_content">
+			
+			<Button
+				android:id="@+id/cart"
+				android:layout_width="30sp"
+				android:layout_height="30sp"
+				android:layout_marginEnd="15sp"
+				android:background="@drawable/ic_baseline_shopping_cart_24"
+				tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+		</LinearLayout>
+	</LinearLayout>
+	<TextView
+		android:id="@+id/empty_view"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:gravity="center"
+		android:visibility="gone"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		android:text="@string/no_data_available" />
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/recycler_view"
+		android:layout_width="match_parent"
+		android:layout_height="0sp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/top_view" />
+</androidx.constraintlayout.widget.ConstraintLayout>
