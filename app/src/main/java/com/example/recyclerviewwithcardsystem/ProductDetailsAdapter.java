@@ -20,12 +20,10 @@ import java.util.Locale;
 public class ProductDetailsAdapter extends RecyclerView.Adapter<ProductDetailsAdapter.ViewHolder> implements Filterable {
     Context context;
     ArrayList<Product> products;
-    ArrayList<Product> copyOfProducts;
 
     ProductDetailsAdapter(Context context, ArrayList<Product> products) {
         this.context = context;
         this.products = products;
-        copyOfProducts = new ArrayList<>();
     }
     @NonNull
     @Override
@@ -105,8 +103,6 @@ public class ProductDetailsAdapter extends RecyclerView.Adapter<ProductDetailsAd
                     }
                     products = filteredProductsList;
 
-                } else {
-                    products = copyOfProducts;
                 }
                 FilterResults filteredValues = new FilterResults();
                 filteredValues.values = filteredProducts;

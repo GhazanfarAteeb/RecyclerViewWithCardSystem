@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i=0;i<20;i++) {
             products.add(new Product(i + 1,"abc","This is a product",R.drawable.ic_launcher_foreground,3.8,3.90));
         }
+        products.add(new Product(21,"ABC","This is a product",R.drawable.ic_launcher_foreground,3.8,3.90));
 
         backButtonLayout.setVisibility(View.GONE);
         registerForContextMenu(recyclerView);
