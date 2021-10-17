@@ -32,7 +32,6 @@ public class ProductDetailsAdapter extends RecyclerView.Adapter<ProductDetailsAd
         View productDetailsView = inflater.inflate(R.layout.list_item_card,parent,false);
         return new ViewHolder(productDetailsView);
     }
-
     @Override
     public void onBindViewHolder(ProductDetailsAdapter.ViewHolder holder, int position) {
         Product product = products.get(position);
@@ -44,7 +43,6 @@ public class ProductDetailsAdapter extends RecyclerView.Adapter<ProductDetailsAd
         ImageView productImage = holder.productImage;
         holder.position = holder.getAdapterPosition();
         String text;
-
         text = "ID "+product.getId();
         id.setText(text);
         text = "Name "+product.getName();
@@ -56,12 +54,10 @@ public class ProductDetailsAdapter extends RecyclerView.Adapter<ProductDetailsAd
         ratingBar.setRating((float)product.getRating());
         productImage.setImageResource(product.getImageId());
     }
-
     @Override
     public int getItemCount() {
         return products.size();
     }
-
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView id;
         public TextView name;
@@ -97,12 +93,11 @@ public class ProductDetailsAdapter extends RecyclerView.Adapter<ProductDetailsAd
                 ArrayList<Product> filteredProductsList = new ArrayList<>();
                 if (!content.isEmpty()) {
                     for (Product row : products) {
-                        if (row.getName().toLowerCase().contains(content.toLowerCase())|| Integer.toString(row.getId()).contains(content.toLowerCase())) {
+                        if (row.getName().toLowerCase().contains(content.toLowerCase()) || Integer.toString(row.getId()).contains(content.toLowerCase())) {
                             filteredProductsList.add(row);
                         }
                     }
                     products = filteredProductsList;
-
                 }
                 FilterResults filteredValues = new FilterResults();
                 filteredValues.values = filteredProducts;
@@ -116,7 +111,6 @@ public class ProductDetailsAdapter extends RecyclerView.Adapter<ProductDetailsAd
             }
         };
     }
-
     public void setDataBack(ArrayList<Product> data) {
         products = data;
         notifyDataSetChanged();

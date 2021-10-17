@@ -80,7 +80,6 @@
 				android:layout_centerVertical="true"
 				android:layout_alignParentEnd="true"
 				android:contentDescription="@null" />
-			
 		</RelativeLayout>
 	</LinearLayout>
 	<LinearLayout

@@ -42,7 +42,6 @@ public class CartDetailsAdapter extends RecyclerView.Adapter<CartDetailsAdapter.
         ImageView productImage = holder.productImage;
         holder.position = holder.getAdapterPosition();
         String text;
-
         text = "ID "+product.getId();
         id.setText(text);
         text = "Name "+product.getName();
@@ -72,7 +71,6 @@ public class CartDetailsAdapter extends RecyclerView.Adapter<CartDetailsAdapter.
 
         public ViewHolder(View itemView) {
             super(itemView);
-
             id = itemView.findViewById(R.id.product_id);
             name = itemView.findViewById(R.id.product_name);
             price = itemView.findViewById(R.id.product_price);
